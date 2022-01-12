@@ -1,0 +1,79 @@
+package tema52;
+
+import java.util.Scanner;
+
+public class Trabajador {
+	int id,tit,años;
+	String nombre;
+	boolean ec,turno;
+	public int gId () {
+		return id;
+	}
+	public void sId(int id) {
+		this.id=id;
+	}
+	public int gTit() {
+		return tit;
+	}
+	public void sTit(int tit) {
+		this.tit=tit;
+	}
+	public int gAños() {
+		return años;
+	}
+	public void sAños(int años) {
+		this.años=años;
+	}
+	public String gNombre() {
+		return nombre;
+	}
+	public void sNombre(String nombre) {
+		this.nombre=nombre;
+	}
+	public boolean gEc() {
+		return ec;
+	}
+	public void sEc(boolean ec) {
+		this.ec=ec;
+	}
+	public boolean gTurno() {
+		return turno;
+	}
+	public void sTurno(boolean turno) {
+		this.turno=turno;
+	}
+	public static void NuevoTrabajador() {
+		Trabajador tra = new Trabajador();
+		Scanner tec = new Scanner(System.in);
+		tra.sId(tec.nextInt());
+		tra.sTit(tec.nextInt());
+		tra.sAños(tec.nextInt());
+		tra.sNombre(tec.nextLine());
+		if(tec.next().equals('S'))tra.sEc(false);
+		else tra.sEc(true);
+		if(tec.next().equals('D'))tra.sTurno(false);
+		else tra.sTurno(true);
+	}
+	public static void ModTrabajador() {
+		Scanner tec = new Scanner(System.in);
+		Trabajador tra = new Trabajador();
+		System.out.println("Que campo deseas modificar? ");
+		String opc=tec.nextLine();
+		String campo="Titulo Años Nombre Estadocivil Turno";
+		switch (campo.indexOf(opc)){
+		case 0: tra.sTit(tec.nextInt());break;
+		case 7: tra.sAños(tec.nextInt());break;
+		case 12: tra.sNombre(tec.nextLine());break;
+		case 19: if(tec.next().equals('S'))tra.sEc(false);
+		else tra.sEc(true);break;
+		case 31: if(tec.next().equals('D'))tra.sTurno(false);
+		else tra.sTurno(true);break;
+		default: System.out.println("no es valido este campo");
+		}
+	}
+	public static void VerTrabajador() {
+		Trabajador tra = new Trabajador();
+		System.out.println(tra.id+tra.nombre+tra.tit+tra.años+tra.ec+tra.turno);
+	}
+	
+}

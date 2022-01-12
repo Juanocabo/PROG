@@ -1,0 +1,14 @@
+package tema52;
+
+public class Conductor {
+
+	public static void main(String[] args) {
+		Trabajador trabajador = new Trabajador();
+		trabajador.NuevoTrabajador();
+		trabajador.VerTrabajador();
+		trabajador.ModTrabajador();
+		trabajador.VerTrabajador();
+
+	}
+
+}
