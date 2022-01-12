@@ -1,0 +1,12 @@
+package tema52;
+
+public class ConductorCuenta {
+	
+
+	public static void main(String[] args) {
+		CuentaCorriente cuenta = new CuentaCorriente("n","m");
+		System.out.println(cuenta.getCodigo()+cuenta.getTitular()+cuenta.getSaldo());
+		cuenta.IngresarDinero();
+	}
+
+}
