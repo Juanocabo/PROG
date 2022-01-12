@@ -7,7 +7,6 @@ public class Trabajador {
 	int id,tit,años;
 	String nombre;
 	boolean ec,turno;
-	public Trabajador() {}
 	public int gId () {
 		return id;
 	}
@@ -44,7 +43,7 @@ public class Trabajador {
 	public void sTurno(boolean turno) {
 		this.turno=turno;
 	}
-	public void NuevoTrabajador() {
+	public static void NuevoTrabajador() {
 		Scanner teclado = new Scanner(System.in);
 		String n;
 		int m;
@@ -61,7 +60,7 @@ public class Trabajador {
 		n=teclado.next();
 		tra.sTurno(n.equals("D"));
 	}
-	public void ModTrabajador() {
+	public static void ModTrabajador() {
 		Scanner tec = new Scanner(System.in);
 		String opc;
 		String campo="Titulo Años Nombre Estadocivil Turno no si";

@@ -10,11 +10,11 @@ public class Conductor {
 		tra.ModTrabajador();
 		tra.VerTrabajador();
 		tra.Salario();
-		tra1.NuevoTrabajador();
-		tra1.VerTrabajador();
-		tra1.ModTrabajador();
-		tra1.VerTrabajador();
-		tra1.Salario();
+		Trabajador.NuevoTrabajador();
+		tra.VerTrabajador();
+		Trabajador.ModTrabajador();
+		tra.VerTrabajador();
+		tra.Salario();
 	}
 
 }

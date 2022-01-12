@@ -7,7 +7,6 @@ public class Trabajador {
 	int id,tit,años;
 	String nombre;
 	boolean ec,turno;
-	public Trabajador() {}
 	public int gId () {
 		return id;
 	}
