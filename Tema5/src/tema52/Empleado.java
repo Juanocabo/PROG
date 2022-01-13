@@ -3,8 +3,8 @@ package tema52;
 import java.util.Scanner;
 
 public class Empleado {
-	String nombre;
-	int nemp;
+	private String nombre;
+	private int nemp;
 	public  String gNombre(){
 		return nombre;
 	}
@@ -17,16 +17,14 @@ public class Empleado {
 	public void sNemp(int nemp) {
 		this.nemp =nemp;
 	}
-	public static void leerDatos() {
+	public void leerDatos() {
 		Scanner teclado = new Scanner(System.in);
-		Empleado leer = new Empleado();
 		String nombre = teclado.next();
 		int nemp = teclado.nextInt();
-		leer.sNombre(nombre);
-		leer.sNemp(nemp);
+		sNombre(nombre);
+		sNemp(nemp);
 	}
-	public static void verDatos() {
-		Empleado ver = new Empleado();
-		System.out.println(ver.nemp+ver.nombre);
+	public void verDatos() {
+		System.out.println(gNombre()+gNemp());
 	}
 }

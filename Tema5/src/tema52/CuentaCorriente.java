@@ -7,9 +7,17 @@ public class CuentaCorriente {
 	private String titular,codigo;
 	static String codigos="";
 	float saldo;
-	boolean valido;
+	boolean valido,si=true;
 	public CuentaCorriente(String codigo,String titular) {
-		if(codigos.indexOf(codigo)<0) {
+		int i=0;
+		String numeros="1 2 3 4 5 6 7 8 9 0";
+		for(int n = codigo.length(); i <n&&si==true&&i<9;++i) {
+			if(numeros.indexOf(codigo.charAt(i))>0) {
+				si=true;
+			}
+			else si = false;
+		}
+		if(codigos.indexOf(codigo)<0 && si==true) {
 		codigos=codigos+" "+codigo;
 		this.codigo = codigo;
 		this.titular = titular;
@@ -51,8 +59,8 @@ public class CuentaCorriente {
 		String l = tec.nextLine();
 		System.out.println("La cuenta no posee suficientes fondos para retirar esa cantidad, porfavor pulse return");
 		l = tec.nextLine();}
-		System.out.println("Esta cuenta no existe");
 		}
+		else System.out.println("Esta cuenta no existe");
 
 	}
 	public boolean PuedoSacar(float m) {
