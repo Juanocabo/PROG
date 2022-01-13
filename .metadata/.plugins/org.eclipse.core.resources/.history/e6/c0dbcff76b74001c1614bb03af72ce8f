@@ -5,13 +5,6 @@ import java.util.Scanner;
 public class Empleado {
 	private String nombre;
 	private int nemp;
-	public Empleado() {
-		leerDatos();
-	}
-	public Empleado(int nemp,String nombre) {
-		this.nemp=nemp;
-		this.nombre=nombre;
-	}
 	public  String gNombre(){
 		return nombre;
 	}
