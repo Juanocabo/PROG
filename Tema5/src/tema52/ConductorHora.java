@@ -1,0 +1,13 @@
+package tema52;
+
+public class ConductorHora {
+
+	public static void main(String[] args) {
+		Hora rolex = new Hora();
+		rolex.ImpHora();
+		rolex.LeerHora(12,42,02);
+		rolex.SumHora(-13);
+		rolex.ImpHora();
+	}
+
+}

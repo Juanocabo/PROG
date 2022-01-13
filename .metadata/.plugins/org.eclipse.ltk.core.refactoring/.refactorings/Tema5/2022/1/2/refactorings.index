@@ -3,3 +3,8 @@
 1642002501800	Encapsulate field 'saldo'
 1642002505571	Encapsulate field 'codigo'
 1642014003318	Delete element
+1642074259181	Encapsulate field 'vinicial'
+1642074292768	Encapsulate field 'valor'
+1642074953669	Encapsulate field 'hora'
+1642074958405	Encapsulate field 'min'
+1642074961641	Encapsulate field 'seg'

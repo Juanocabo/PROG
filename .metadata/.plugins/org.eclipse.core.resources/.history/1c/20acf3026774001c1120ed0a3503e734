@@ -1,0 +1,30 @@
+package tema52;
+
+public class Indicador {
+	private float vinicial,valor;
+public Indicador(float vinicial,float valor) {	
+	this.vinicial=vinicial;
+	this.valor = valor;
+}
+public float getVinicial() {
+	return vinicial;
+}
+public void setVinicial(float vinicial) {
+	this.vinicial = vinicial;
+}
+public float getValor() {
+	return valor;
+}
+public void setValor(float valor) {
+	this.valor = valor;
+}
+public void VarValor(float vari ) {
+	setValor(valor+vari);
+}
+public void ModValor(float vari ) {
+	setValor(vari);
+}
+public void VerValor(float vari ) {
+	System.out.println(getValor());
+}
+}
