@@ -108,10 +108,10 @@ public class Trabajador {
 		case 3:i=1250;break;
 		case 4:i=1500;break;
 		}
-		if(gTurno())t=100;
-		double salario=gAños()*75+425+t+i;
-		if(gEc()==true)salario=salario*0.88;
+		if(tra.turno)t=100;
+		double salario=tra.años*75+425+t+i;
+		if(tra.ec==true)salario=salario*0.88;
 		else salario = salario*0.9;
-		System.out.println("el salario de "+gNombre()+" es: "+salario+" €");
+		System.out.println("el salario de "+tra.nombre+" es: "+salario+" €");
 	}
 }
