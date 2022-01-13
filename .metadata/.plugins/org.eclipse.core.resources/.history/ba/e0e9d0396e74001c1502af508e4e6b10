@@ -7,17 +7,7 @@ public class Trabajador {
 	int id,tit,años;
 	String nombre;
 	boolean ec,turno;
-	public Trabajador() {
-		NuevoTrabajador();
-	}
-	public Trabajador(int id,int tit,int años,String nombre,String ec,String turno) {
-		this.id=id;
-		this.tit=tit;
-		this.años=años;
-		this.nombre=nombre;
-		this.ec=ec.equals("S");
-		this.turno=turno.equals("D");
-	}
+	public Trabajador() {}
 	public int gId () {
 		return id;
 	}
