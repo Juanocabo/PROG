@@ -8,8 +8,11 @@ public class Trabajador {
 	static int num;
 	String nombre;
 	boolean ec,turno;
-	public Trabajador(int tit,int años,String nombre,String ec,String turno) {
-		this.id=num++;
+	public Trabajador() {
+		this.id=
+	}
+	public Trabajador(int id,int tit,int años,String nombre,String ec,String turno) {
+		this.id=id;
 		this.tit=tit;
 		this.años=años;
 		this.nombre=nombre;

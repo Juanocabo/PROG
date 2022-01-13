@@ -5,11 +5,13 @@ import java.util.Scanner;
 public class Trabajador {
 	Scanner tec = new Scanner(System.in);
 	int id,tit,años;
-	static int num;
 	String nombre;
 	boolean ec,turno;
-	public Trabajador(int tit,int años,String nombre,String ec,String turno) {
-		this.id=num++;
+	public Trabajador() {
+		NuevoTrabajador();
+	}
+	public Trabajador(int id,int tit,int años,String nombre,String ec,String turno) {
+		this.id=id;
 		this.tit=tit;
 		this.años=años;
 		this.nombre=nombre;
@@ -18,6 +20,9 @@ public class Trabajador {
 	}
 	public int gId () {
 		return id;
+	}
+	public void sId(int id) {
+		this.id=id;
 	}
 	public int gTit() {
 		return tit;
@@ -48,6 +53,23 @@ public class Trabajador {
 	}
 	public void sTurno(boolean turno) {
 		this.turno=turno;
+	}
+	public void NuevoTrabajador() {
+
+		String n;
+		int m;
+		m=tec.nextInt();
+		if(m>0&&m<101)sId(m);
+		m=tec.nextInt();
+		if(m>=0 && m<5)sTit(m);
+		m=tec.nextInt();
+		sAños(m);
+		n= tec.next();
+		sNombre(n);
+		n=tec.next();
+		sEc(n.equals("S"));
+		n=tec.next();
+		sTurno(n.equals("D"));
 	}
 	public void ModTrabajador() {
 		String opc;

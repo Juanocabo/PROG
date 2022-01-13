@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CuentaCorriente {
 	static Scanner tec = new Scanner(System.in);
 	private String titular,codigo;
-	private static String codigos="";
+	static String codigos="";
 	float saldo;
 	boolean valido,si=true;
 	public CuentaCorriente(String codigo,String titular) {
