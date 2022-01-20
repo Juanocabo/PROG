@@ -32,7 +32,18 @@ public void setSeg(int seg) {
 }
 public void SumHora(int hora) {
 	this.hora+=hora;
-	if(this.hora>=24||this.hora<0)this.hora=24+this.hora;
+	if(this.hora>=24) this.hora=this.hora%24;
+	if(this.hora<0) this.hora=24-(-this.hora)%24;
+}
+public void SumMin(int min) {
+	this.min+=min;
+	if(this.min>=60) {this.min+=min%60;SumHora((min-this.min)/60);}
+	if(this.min<0) {this.min=60-(-this.min)%60;SumHora((min-(-min)%60)/60);}
+}
+public void SumSeg(int seg) {
+	this.seg+=seg;
+	if(this.seg>=60) {this.seg+=seg%60;SumMin((seg-this.seg)/60);}
+	if(this.seg<0) {this.seg=60-(-this.seg)%60;SumMin((seg-(-seg)%60)/60);}
 }
 public void LeerHora(int hora,int min, int seg) {
 	setHora(hora);

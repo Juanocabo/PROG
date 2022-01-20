@@ -6,7 +6,12 @@ public class ConductorHora {
 		Hora rolex = new Hora();
 		rolex.ImpHora();
 		rolex.LeerHora(12,42,02);
-		rolex.SumHora(-13);
+		rolex.ImpHora();
+		rolex.SumHora(-52);
+		rolex.ImpHora();
+		rolex.SumMin(-120);
+		rolex.ImpHora();
+		rolex.SumSeg(-120);
 		rolex.ImpHora();
 	}
 
