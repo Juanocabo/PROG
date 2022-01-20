@@ -51,6 +51,9 @@ public void LeerHora(int hora,int min, int seg) {
 	setSeg(seg);
 }
 public void ImpHora() {
-	System.out.println(getHora()+":"+getMin()+":"+getSeg());
+	if(getSeg()<10) {
+	System.out.println(getHora()+":"+getMin()+":0"+getSeg());
 }
+	else 	System.out.println(getHora()+":"+getMin()+":"+getSeg());
+	}
 }
