@@ -1,6 +1,6 @@
-package tema52;
+package Tema6;
 
-public class afgsdg {
+public class Ejer03 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
