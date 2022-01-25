@@ -7,14 +7,15 @@ public class Menu {
 		carta[i] = new Plato();}
 	}	
 	public void setCarta(String Nombre, String Ingredientes, float precio) {
-		
+		if(cont<6) {
 		carta[cont].setNombre(Nombre);
 		carta[cont].setIngredientes(Ingredientes);
 		carta[cont].setPrecio(precio);
-		++cont;
+		++cont;}
 	}
 	public void verCarta() {
 		for(int i = 0;i<carta.length;++i) {
+			 System.out.println(i+1);
 			 System.out.println(carta[i].getNombre());
 			 System.out.println(carta[i].getIngredientes());
 			 System.out.println(carta[i].getPrecio());
