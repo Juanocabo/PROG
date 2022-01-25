@@ -1,0 +1,15 @@
+package tema5;
+import java.util.Scanner;
+public class Disco {
+	Scanner tec = new Scanner(System.in);
+private String titulo;
+private int ncan,fecha;
+private float precio;
+
+public Disco(String titulo,int ncan,int fecha,float precio) {
+	this.titulo=titulo;
+	this.ncan=ncan;
+	this.precio=precio;
+	this.fecha=fecha;
+}
+}
