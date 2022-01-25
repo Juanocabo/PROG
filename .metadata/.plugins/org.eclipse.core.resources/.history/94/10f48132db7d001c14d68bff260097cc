@@ -1,0 +1,84 @@
+package tema5;
+
+import java.util.Scanner;
+
+public class CuentaCorriente {
+	static Scanner tec = new Scanner(System.in);
+	private String titular,codigo;
+	private static String codigos="";
+	float saldo;
+	boolean valido,si=true;
+	public CuentaCorriente() {}
+	public CuentaCorriente(String codigo,String titular) {
+		int i=0;
+		String numeros="1 2 3 4 5 6 7 8 9 0";
+		for(int n = codigo.length(); i <n&&si==true&&i<9;++i) {
+			if(numeros.indexOf(codigo.charAt(i))>0) {
+				si=true;
+			}
+			else si = false;
+		}
+		if(codigos.indexOf(codigo)<0 && si==true) {
+		codigos=codigos+" "+codigo;
+		this.codigo = codigo;
+		this.titular = titular;
+		saldo = 0; 
+		valido=true;} 
+		else valido=false;
+	}
+	public String getTitular() {
+		return titular;
+	}
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+	public float getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(float saldo) {
+		this.saldo = saldo;
+	}
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		int i=0;
+		String numeros="1 2 3 4 5 6 7 8 9 0";
+		for(int n = codigo.length(); i <n&&si==true&&i<9;++i) {
+			if(numeros.indexOf(codigo.charAt(i))>0) {
+				si=true;
+			}
+			else si = false;
+		}
+		if(codigos.indexOf(codigo)<0 && si==true) {
+		codigos=codigos+" "+codigo;
+		this.codigo = codigo;
+		saldo = 0; 
+		valido=true;} 
+		else valido=false;
+	}
+	public void IngresarDinero() {
+		if(valido==true) {
+		System.out.println("Dinero que desea ingresar: ");
+		float m = tec.nextFloat();
+		setSaldo(saldo + m);}
+		else System.out.println("Esta cuenta no existe");
+	}
+	public void RetiraDinero() {
+		if(valido==true) {
+		System.out.println("Cantidad que desea retirar de su cuenta: ");
+		float m = tec.nextFloat();
+		if(PuedoSacar(m))setSaldo(saldo - m);
+		else { 
+		String l = tec.nextLine();
+		System.out.println("La cuenta no posee suficientes fondos para retirar esa cantidad, porfavor pulse return");
+		l = tec.nextLine();}
+		}
+		else System.out.println("Esta cuenta no existe");
+
+	}
+	public boolean PuedoSacar(float m) {
+		if (saldo>=m)return true;
+		else return false;
+	}
+}

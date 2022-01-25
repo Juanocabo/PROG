@@ -11,10 +11,10 @@ public class Cuenta {
 	public Cuenta() {
 	}
 	public void ADD(String codigo, String titular,float Saldo) {
-			corrientes[cont]=new CuentaCorriente();	
+			corrientes[cont]=new CuentaCorriente();
+			corrientes[cont].setCodigo(codigo);
 			corrientes[cont].setTitular(titular);
 			corrientes[cont].setSaldo(Saldo);
-			corrientes[cont].setCodigo(codigo);
 		++cont;
 	}
 	public void Rico() {
