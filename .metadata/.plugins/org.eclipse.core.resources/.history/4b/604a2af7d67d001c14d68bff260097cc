@@ -1,0 +1,17 @@
+package Tema6;
+
+import java.util.Arrays;
+
+import tema5.CuentaCorriente;
+
+public class Cuenta {
+	CuentaCorriente[] corrientes = new CuentaCorriente[100];
+	float [] saldos = new float [100];
+	public Cuenta() {
+		for(int i = 0 ;i< corrientes.length;++i ) {
+			corrientes[i]=new CuentaCorriente();
+			saldos[i]=corrientes[i].getSaldo();
+		}
+		Arrays.sort(saldos);
+	}
+}

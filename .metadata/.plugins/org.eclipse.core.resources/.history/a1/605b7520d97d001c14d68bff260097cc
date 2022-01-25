@@ -1,0 +1,11 @@
+package Tema6;
+
+public class Conductorcuen {
+
+	public static void main(String[] args) {
+		Cuenta cuen = new Cuenta();
+		cuen.ADD();
+		cuen.Rico();
+	}
+
+}
