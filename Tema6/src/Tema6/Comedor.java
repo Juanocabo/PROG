@@ -29,42 +29,55 @@ public class Comedor {
 			this.cuenta = cuenta;
 		}
 	}
-	
+	public Comedor() {
+		String nombre=tec.next();
+		Servicio cue = new Servicio(nombre);
+		cue.Cuenta();
+	}
+	public class Servicio{
+		static int contadordemenus=0;
 		String nombre;
 		int m;
 		Float debe=0f;
-		public Comedor(String nombre) {
+		
+		Menuelegido[] serv = new Menuelegido[m];
+		public Servicio(String nombre) {
 			this.nombre=nombre;
 			System.out.println("Introduce el numero de menus que desea :");
 			m=  tec.nextInt();
+			if(contadordemenus+m>100) m=100-contadordemenus;
+			if(contadordemenus+m<100) {
 			Menuelegido[] serv = new Menuelegido[m];
 			for(int i = 0; i < serv.length;++i) {
 				serv[i] = new Menuelegido();
 				debe+=serv[i].getCuenta();
-				copia(serv);
-			}	
+				copia(serv);}
+			}
 		}
-		Menuelegido[] serv = new Menuelegido[m];
-		
 		public void copia(Menuelegido[] serv1) {
 			serv=serv1;
 		}
-		public void verCuenta() {
+		public void Cuenta() {
+			System.out.println(nombre);
 			for(int i = 0; i < serv.length;++i) {
-				System.out.println(serv[i].getCuenta());
+				System.out.println((i+1)+".  "+"\n"+serv[i].menele[0].getNombre()+"  "+serv[i].menele[0].getPrecio()+"\n"+
+			serv[i].menele[1].getNombre()+"  "+serv[i].menele[1].getPrecio()+"\n"+serv[i].getCuenta()+"\n");
 				
 			}	
-			System.out.println("Total : "+debe);
+			System.out.println("Total : "+debe+" €");
+			System.out.println("Importe : ");
+			float Dineroentregado=tec.nextFloat();
+			System.out.println(" Cambio : "+(Dineroentregado-debe)+" €");
 		}
-	
-	
+		
+	}
 	
 	
 	
 	
 	public static void main(String[] args) {
-		Comedor hola = new Comedor("Juan");
-		hola.verCuenta();
+		Comedor Lunes = new Comedor();
+		
 	}
 
 }
