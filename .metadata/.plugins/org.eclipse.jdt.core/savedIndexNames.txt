@@ -1,12 +1,6 @@
-INDEX VERSION 1.131+D:\documentos\AJuan\DAM2\FotosVerano83\.metadata\.plugins\org.eclipse.jdt.core
-381219125.index
-4172714009.index
-2840789483.index
-1639956899.index
-1117099457.index
-2296145046.index
-3948686181.index
+INDEX VERSION 1.131+D:\Documentos\Aqui\0\FotosVerano83\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-2525521949.index
-75931715.index
+4172714009.index
 345804389.index
+75931715.index
+1639956899.index

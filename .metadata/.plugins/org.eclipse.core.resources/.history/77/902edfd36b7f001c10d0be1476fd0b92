@@ -1,0 +1,65 @@
+package Tema6;
+
+import java.util.Scanner;
+
+public class Tresenraya {
+Scanner tec = new Scanner(System.in);
+	public Tresenraya() {
+		boolean jugar=true;
+		boolean partida=true;
+		do {
+			Juego ter = new Juego();
+			do {
+				int a=tec.nextInt(),b=tec.nextInt();
+				ter.Turno(a, b);
+				if(ter.u==9);
+			}while(partida);
+			System.out.println("Quieres jugar otra partida? y/n");
+			String l = tec.next();
+			if(l.equals("n"))jugar=false;
+		}while(jugar);
+	}
+	public class Juego {
+		public int u = 0;
+		static int partida = 1;
+		String[][] tablero = new String[3][3];
+
+		public Juego() {
+			for (int i = 0; i < tablero[0].length; ++i) {
+				for (int j = 0; j < tablero.length; ++j) {
+					tablero[i][j] = " ";
+				}
+			}
+			++partida;
+			Tablero();
+		}
+
+		public void Turno(int a, int b) {
+			if (u % 2 == 0) {
+				tablero[a][b] = "X";
+			} else
+				tablero[a][b] = "O";
+			Tablero();
+			++u;
+		}
+
+		public void Tablero() {
+			System.out.println("0  1  2");
+			for (int i = 0; i < tablero[0].length; ++i) {
+				System.out.print(i+" ");
+				for (int j = 0; j < tablero.length; ++j) {
+					System.out.print(tablero[i][j]);
+					if (j < 2)
+						System.out.print("|");
+				}
+				if (i < 2) {
+					System.out.println();
+					System.out.println("______");
+					System.out.println();
+				}
+				else System.out.println();
+			}
+
+		}
+	}
+}
