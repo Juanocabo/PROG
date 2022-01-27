@@ -1,0 +1,31 @@
+package Tema6;
+
+import java.util.Scanner;
+
+public class Matriz {
+	Scanner tec = new Scanner(System.in);
+	int filas,columnas;
+	public Matriz() {
+	 filas = tec.nextInt();
+	 columnas = tec.nextInt();
+	}
+	int[][] matrix = new int[filas][columnas];
+	public int Filas() {
+		return filas;
+	}
+	public int Columnas() {
+		return columnas;
+	}
+	public void Celda(int f,int c) {
+		matrix[f][c]=tec.nextInt();
+	}
+	public void Imprimir() {
+		for(int i = 0; i<filas;++i) {
+			for(int j = 0;j<columnas;++j) {
+				System.out.print(matrix[i][j]+" ");
+				if(filas%j==0)System.out.println();;
+			}
+			
+		}
+	}
+}
