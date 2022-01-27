@@ -10,21 +10,7 @@ Scanner tec = new Scanner(System.in);
 			boolean partida=true;
 			Juego ter = new Juego();
 			do {
-				int a,b;
-				int t=tec.nextInt();
-				switch(t) {
-				case 7:a=0;b=0;break;
-				case 8:a=0;b=1;break;
-				case 9:a=0;b=2;break;
-				case 4:a=1;b=0;break;
-				case 5:a=1;b=1;break;
-				case 6:a=1;b=2;break;
-				case 1:a=2;b=0;break;
-				case 2:a=2;b=1;break;
-				case 3:a=2;b=2;break;
-				default: a=0;b=0;
-				}
-				
+				int a=tec.nextInt(),b=tec.nextInt();
 				ter.Turno(a, b);
 				if(ter.u==9||ter.fin==false)partida=false;
 			}while(partida);
@@ -109,7 +95,7 @@ Scanner tec = new Scanner(System.in);
 				System.out.println("Ha ganado el jugador O");
 				++partidao;
 			}
-			else if(u>=8)System.out.println("Empate");;
+			else if(u>=9)System.out.println("Empate");;
 		}
 		public void Estadisticas() {
 			System.out.println("Partidas ganadas por X: "+partidax+"\n"+"Partidas ganadas por O: "+partidao+"\n"+"Partidas jugadas: "+partidas);

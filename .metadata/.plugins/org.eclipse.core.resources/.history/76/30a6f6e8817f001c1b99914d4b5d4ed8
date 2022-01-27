@@ -109,7 +109,7 @@ Scanner tec = new Scanner(System.in);
 				System.out.println("Ha ganado el jugador O");
 				++partidao;
 			}
-			else if(u>=8)System.out.println("Empate");;
+			else if(u==9)System.out.println("Empate");;
 		}
 		public void Estadisticas() {
 			System.out.println("Partidas ganadas por X: "+partidax+"\n"+"Partidas ganadas por O: "+partidao+"\n"+"Partidas jugadas: "+partidas);
