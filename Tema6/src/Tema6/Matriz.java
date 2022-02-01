@@ -5,15 +5,28 @@ import java.util.Scanner;
 public class Matriz {
 	Scanner tec = new Scanner(System.in);
 	int filas,columnas;
+	int[][]matrix;
 	public Matriz(int filas,int columnas) {
 		 this.filas=filas;
 		 this.columnas=columnas;
+		 int[][] matriz = new int[filas][columnas];
+		 for(int i = 0; i<filas;++i) {
+				for(int j = 0;j<columnas;++j) {
+					matriz[i][j]=tec.nextInt();
+				}}
+		 matrix = matriz;
 		}
-	public Matriz() {
-	 filas = tec.nextInt();
-	 columnas = tec.nextInt();
-	}
-	int[][] matrix = new int[filas][columnas];
+	public Matriz(int filas,int columnas,boolean met) {
+		 this.filas=filas;
+		 this.columnas=columnas;
+		 int[][] matriz = new int[filas][columnas];
+		 for(int i = 0; i<filas;++i) {
+				for(int j = 0;j<columnas;++j) {
+					matriz[i][j]=0;
+				}}
+		 matrix = matriz;
+		}
+		
 	public int Filas() {
 		return filas;
 	}
@@ -24,16 +37,17 @@ public class Matriz {
 		matrix[f][c]=tec.nextInt();
 	}
 	public void Imprimir() {
+		System.out.println();
 		for(int i = 0; i<filas;++i) {
 			for(int j = 0;j<columnas;++j) {
 				System.out.print(matrix[i][j]+" ");
-				if(filas%i==0)System.out.println();
+				if(j==columnas-1)System.out.println();
 			}
 			
 		}
 	}
 	public Matriz sum( Matriz matri) {
-		Matriz vector3 = new Matriz(filas,columnas);
+		Matriz vector3 = new Matriz(filas,columnas,true);
 		for(int i = 0; i<filas;++i) {
 			for(int j = 0;j<columnas;++j) {
 				vector3.matrix[i][j]=matrix[i][j]+matri.matrix[i][j];
@@ -44,4 +58,34 @@ public class Matriz {
 		return vector3;
 		
 	}
+	public Matriz res( Matriz matri) {
+		Matriz vector3 = new Matriz(filas,columnas,true);
+		for(int i = 0; i<filas;++i) {
+			for(int j = 0;j<columnas;++j) {
+				vector3.matrix[i][j]=matri.matrix[i][j]-matrix[i][j];
+				
+			}
+			
+		}
+		return vector3;
+		
+	}
+	public Matriz mul( Matriz matri) {
+		Matriz vector3 = new Matriz(filas,columnas,true);
+		for(int i = 0; i<vector3.matrix.length;++i) {
+			int a=0;
+			for(int j = 0;j<vector3.matrix[i].length;++j) {
+				for(int z=0;z<columnas;++z) {
+					vector3.matrix[i][j]+=matrix[i][z]*matri.matrix[z][j];
+				}
+				
+				
+			}
+			
+		}
+		return vector3;
+		
+	}
+	
+	
 }

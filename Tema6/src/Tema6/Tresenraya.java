@@ -64,7 +64,6 @@ Scanner tec = new Scanner(System.in);
 			++u;
 			
 		}
-
 		public void Tablero() {
 			System.out.println("  0 1 2");
 			System.out.println();
@@ -90,7 +89,7 @@ Scanner tec = new Scanner(System.in);
 			else if(tablero[2][0].equals("X")&&tablero[2][1].equals("X")&&tablero[2][2].equals("X")) fin=false;
 			else if(tablero[0][0].equals("X")&&tablero[1][1].equals("X")&&tablero[2][2].equals("X")) fin=false;
 			else if(tablero[0][2].equals("X")&&tablero[1][1].equals("X")&&tablero[2][0].equals("X")) fin=false;
-			else if(tablero[0][0].equals("X")&&tablero[0][1].equals("X")&&tablero[0][2].equals("X")) fin=false;
+			else if(tablero[0][0].equals("X")&&tablero[1][0].equals("X")&&tablero[2][0].equals("X")) fin=false;
 			else if(tablero[0][1].equals("X")&&tablero[1][1].equals("X")&&tablero[2][1].equals("X")) fin=false;
 			else if(tablero[0][2].equals("X")&&tablero[1][2].equals("X")&&tablero[2][2].equals("X")) fin=false;
 			else if(tablero[0][0].equals("O")&&tablero[0][1].equals("O")&&tablero[0][2].equals("O")) fin=false;
@@ -98,7 +97,7 @@ Scanner tec = new Scanner(System.in);
 			else if(tablero[2][0].equals("O")&&tablero[2][1].equals("O")&&tablero[2][2].equals("O")) fin=false;
 			else if(tablero[0][0].equals("O")&&tablero[1][1].equals("O")&&tablero[2][2].equals("O")) fin=false;
 			else if(tablero[0][2].equals("O")&&tablero[1][1].equals("O")&&tablero[2][0].equals("O")) fin=false;
-			else if(tablero[0][0].equals("O")&&tablero[0][1].equals("O")&&tablero[0][2].equals("O")) fin=false;
+			else if(tablero[0][0].equals("O")&&tablero[1][0].equals("O")&&tablero[2][0].equals("O")) fin=false;
 			else if(tablero[0][1].equals("O")&&tablero[1][1].equals("O")&&tablero[2][1].equals("O")) fin=false;
 			else if(tablero[0][2].equals("O")&&tablero[1][2].equals("O")&&tablero[2][2].equals("O")) fin=false;
 			if(u%2==0 && fin==false) { 
