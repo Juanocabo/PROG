@@ -1,7 +1,0 @@
-package Tema6;
-
-public class ConductorTresenrata {
-public static void main (String[]args) {
-	Juego hola = new Juego();
-}
-}
