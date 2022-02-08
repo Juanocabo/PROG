@@ -27,14 +27,14 @@ public class Ejer01 {
 			System.out.println(nombre+" "+sueldo+" "+titulo+" "+depto);
 		}
 	}
+	Empleado[] emp;
 	public Ejer01(int num,boolean emj) {
+		emp = new Empleado[num];
 		if(emj==true) {
-		Empleado[] emp = new Empleado[num];
 		for(int i =0;i<num;++i) {
 			emp[i]=new Empleado(tec.next(),tec.nextFloat());}
 				copia=emp;}
 		else {
-			Empleado[] emp = new Empleado[num];
 			for(int i =0;i<num;++i) {
 				emp[i]=new Jefe(tec.next(),tec.nextFloat(),tec.next(),tec.next());
 				copia=emp;}
@@ -43,7 +43,7 @@ public class Ejer01 {
 	}
 	public void Ver() {
 		for(int i =0;i<copia.length;++i) {
-			copia[i].visEmp();
+			emp[i].visEmp();
 		}
 	}
 	
