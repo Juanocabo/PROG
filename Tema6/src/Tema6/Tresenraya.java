@@ -1,15 +1,21 @@
 package Tema6;
 
 import java.util.Scanner;
-
+/**
+ * <h2>Esto es el juego del tres en raya</h2>
+ * @author juan
+ * @see juego
+ */
 public class Tresenraya {
 Scanner tec = new Scanner(System.in);
+/**constructor de la clase principal*/
 	public Tresenraya() {
 		boolean jugar=true;
+		/**bucle para jugar hasta que el jugador selecciona salir*/
 		do {
 			boolean partida=true;
 			Juego ter = new Juego();
-			do {
+			do {/**bucle para repetir las rondas en las que pide posicion*/
 				int a,b;
 				int t=tec.nextInt();
 				switch(t) {
@@ -37,13 +43,19 @@ Scanner tec = new Scanner(System.in);
 		}while(jugar);
 		
 	}
+	/**clase en la que se crea el juego*/
 	public class Juego {
+		/**variable que determina cuando se termina la partida*/
 		public boolean fin=true;
+		/**variable que determina el numero de ronda dentro de la partida*/
 		public int u = 0;
+		/**variable que determina las partidas que gana x/o/jugadas*/
 		static int partidax = 0,partidao=0,partidas=0;
+		/**vector que contiene el tablero*/
 		String[][] tablero = new String[3][3];
-
+		/**crea el tablero*/
 		public Juego() {
+			
 			for (int i = 0; i < tablero[0].length; ++i) {
 				for (int j = 0; j < tablero.length; ++j) {
 					tablero[i][j] = " ";
@@ -53,7 +65,7 @@ Scanner tec = new Scanner(System.in);
 			++partidas;
 			Tablero();
 		}
-
+		/**metodo para determinar que jugador juega el turno*/
 		public void Turno(int a, int b) {
 			if (u % 2 == 0) {
 				tablero[a][b] = "X";
@@ -64,6 +76,7 @@ Scanner tec = new Scanner(System.in);
 			++u;
 			
 		}
+		/**metodo para imprimir el tablero*/
 		public void Tablero() {
 			System.out.println("  0 1 2");
 			System.out.println();
@@ -83,7 +96,9 @@ Scanner tec = new Scanner(System.in);
 			}
 
 		}
+		/**metodo para comprobar si alguien ha ganado en la ronda*/
 		public void Comprobar() {
+			/**posibles resoluciones en las que se gana*/
 			if(tablero[0][0].equals("X")&&tablero[0][1].equals("X")&&tablero[0][2].equals("X")) fin=false;
 			else if(tablero[1][0].equals("X")&&tablero[1][1].equals("X")&&tablero[1][2].equals("X")) fin=false;
 			else if(tablero[2][0].equals("X")&&tablero[2][1].equals("X")&&tablero[2][2].equals("X")) fin=false;
@@ -110,6 +125,7 @@ Scanner tec = new Scanner(System.in);
 			}
 			else if(u>=8)System.out.println("Empate");;
 		}
+		/**metodo para imprimir las estadisticas actuales*/
 		public void Estadisticas() {
 			System.out.println("Partidas ganadas por X: "+partidax+"\n"+"Partidas ganadas por O: "+partidao+"\n"+"Partidas jugadas: "+partidas);
 		}
