@@ -1,23 +1,28 @@
 package Tema74;
 
-import java.util.Scanner;
-
 public final class Profesor extends Persona {
-	Scanner tec = new Scanner(System.in);
+	
 	String dpto;
 	int c_plus;
 	class plus{
 		String nombre;
-		float cantidad;
+		float cantidad=0;
 		public plus() {
 			nombre=tec.next();
 			cantidad=tec.nextFloat();
+		}
+		public plus(int u) {
+			nombre="";
+			cantidad=0;
 		}
 	}
 	plus[] pls;
 	public Profesor() {
 		pedirDatos();
 		pls = new plus[c_plus];
+		for(int i = 0 ; i<pls.length;++i) {
+			pls[i] = new plus();
+		}
 	}
 	public void pedirDatos() {
 		nombre=tec.next();
@@ -26,13 +31,19 @@ public final class Profesor extends Persona {
 	}
 	@Override
 	public void DevolverMasAlto() {
-		// TODO Auto-generated method stub
-		
+		plus mpls = new plus(1);
+		for(int i = 0 ; i< pls.length;++i) {
+			if(pls[i].cantidad>=mpls.cantidad)mpls=pls[i];
+		}
+		System.out.println(mpls.nombre+"-->"+mpls.cantidad);
 	}
 
 	@Override
 	public void VisualListaValores() {
-		// TODO Auto-generated method stub
+		System.out.println(nombre+" "+edad+":");
+		for(int i = 0 ; i<pls.length;++i) {
+			System.out.println(pls[i].nombre+"-->"+pls[i].cantidad);
+		}
 		
 	}
 
