@@ -6,7 +6,7 @@ public class Empleados {
 	static float sueldobase=1000;
 	int edad;
 	public Empleados(){
-		pedirDatos();
+	  this.pedirDatos();
 	}
 	public void pedirDatos() {
 		nombre=tec.next();

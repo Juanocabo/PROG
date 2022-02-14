@@ -6,7 +6,8 @@ public class Maquinistas extends Empleados{
 	pedirDatos();
 	}
 
-	public void pedirDatos() {
+	public void pedirDatos() {	
+		System.out.println("maqui");
 		super.pedirDatos();
 		maquina=tec.nextInt();
 		años=tec.nextInt();

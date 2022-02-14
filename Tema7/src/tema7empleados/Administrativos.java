@@ -7,6 +7,7 @@ public class Administrativos extends Empleados{
 		pedirDatos();
 	}
 	public void pedirDatos() {
+		System.out.println("admins");
 		super.pedirDatos();
 		estudios=tec.next();
 		ordenador=tec.nextInt();
