@@ -3,7 +3,6 @@ INDEX VERSION 1.131+D:\Documentos\Aqui\0\FotosVerano83\.metadata\.plugins\org.ec
 4172714009.index
 345804389.index
 75931715.index
-2410782863.index
 1639956899.index
 3207105992.index
 521059614.index

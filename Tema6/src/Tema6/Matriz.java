@@ -7,26 +7,26 @@ public class Matriz {
 	int filas,columnas;
 	int[][]matrix;
 	public Matriz(int filas,int columnas) {
-		 this.filas=filas;
-		 this.columnas=columnas;
-		 matrix = new int[filas][columnas];
-		 for(int i = 0; i<filas;++i) {
-				for(int j = 0;j<columnas;++j) {
-					matrix[i][j]=tec.nextInt();
-				}}
-		 
-		}
-	public Matriz(int filas,int columnas,boolean met) {
-		 this.filas=filas;
-		 this.columnas=columnas;
-		 matrix = new int[filas][columnas];
-		 for(int i = 0; i<filas;++i) {
-				for(int j = 0;j<columnas;++j) {
-					matrix[i][j]=0;
-				}}
+		this.filas=filas;
+		this.columnas=columnas;
+		matrix = new int[filas][columnas];
+		for(int i = 0; i<filas;++i) {
+			for(int j = 0;j<columnas;++j) {
+				matrix[i][j]=tec.nextInt();
+			}}
 
-		}
-		
+	}
+	public Matriz(int filas,int columnas,boolean met) {
+		this.filas=filas;
+		this.columnas=columnas;
+		matrix = new int[filas][columnas];
+		for(int i = 0; i<filas;++i) {
+			for(int j = 0;j<columnas;++j) {
+				matrix[i][j]=0;
+			}}
+
+	}
+
 	public int Filas() {
 		return filas;
 	}
@@ -43,7 +43,7 @@ public class Matriz {
 				System.out.print(matrix[i][j]+" ");
 				if(j==columnas-1)System.out.println();
 			}
-			
+
 		}
 	}
 	public Matriz sum( Matriz matri) {
@@ -51,24 +51,24 @@ public class Matriz {
 		for(int i = 0; i<filas;++i) {
 			for(int j = 0;j<columnas;++j) {
 				vector3.matrix[i][j]=matrix[i][j]+matri.matrix[i][j];
-				
+
 			}
-			
+
 		}
 		return vector3;
-		
+
 	}
 	public Matriz res( Matriz matri) {
 		Matriz vector3 = new Matriz(filas,columnas,true);
 		for(int i = 0; i<filas;++i) {
 			for(int j = 0;j<columnas;++j) {
 				vector3.matrix[i][j]=matri.matrix[i][j]-matrix[i][j];
-				
+
 			}
-			
+
 		}
 		return vector3;
-		
+
 	}
 	public Matriz mul( Matriz matri) {
 		Matriz vector3 = new Matriz(filas,columnas,true);
@@ -78,14 +78,14 @@ public class Matriz {
 				for(int z=0;z<columnas;++z) {
 					vector3.matrix[i][j]+=matrix[i][z]*matri.matrix[z][j];
 				}
-				
-				
+
+
 			}
-			
+
 		}
 		return vector3;
-		
+
 	}
-	
-	
+
+
 }

@@ -21,8 +21,8 @@ public class Ejer03 {
 	}
 	public void pideNum() throws InputMismatchException{
 		try {
-		dividendo=tec.nextInt();
-		divisor=tec.nextInt();
+			dividendo=tec.nextInt();
+			divisor=tec.nextInt();
 		}
 		catch(InputMismatchException e) {}
 
@@ -48,7 +48,7 @@ public class Ejer03 {
 		private static final long serialVersionUID = 1L;
 		public NoNumCadenaException ( String error) {
 			super();}
-		}
+	}
 	public static void main(String[] args) {
 		Ejer03 hola = new Ejer03();
 

@@ -4,9 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejer01 {
- Scanner tec  =new Scanner(System.in);
+	Scanner tec  =new Scanner(System.in);
 	static public class alumno{
-		 Scanner tec  =new Scanner(System.in);
+		Scanner tec  =new Scanner(System.in);
 		String nombre;
 		int edad;
 		float altura;

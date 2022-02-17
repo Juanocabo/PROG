@@ -8,7 +8,7 @@ public class Conductormatriz {
 		hola.Imprimir();
 		adios.Imprimir();
 		hola.mul(adios).Imprimir();
-		
+
 	}
 
 }
