@@ -9,22 +9,22 @@ public class Matriz {
 	public Matriz(int filas,int columnas) {
 		 this.filas=filas;
 		 this.columnas=columnas;
-		 int[][] matriz = new int[filas][columnas];
+		 matrix = new int[filas][columnas];
 		 for(int i = 0; i<filas;++i) {
 				for(int j = 0;j<columnas;++j) {
-					matriz[i][j]=tec.nextInt();
+					matrix[i][j]=tec.nextInt();
 				}}
-		 matrix = matriz;
+		 
 		}
 	public Matriz(int filas,int columnas,boolean met) {
 		 this.filas=filas;
 		 this.columnas=columnas;
-		 int[][] matriz = new int[filas][columnas];
+		 matrix = new int[filas][columnas];
 		 for(int i = 0; i<filas;++i) {
 				for(int j = 0;j<columnas;++j) {
-					matriz[i][j]=0;
+					matrix[i][j]=0;
 				}}
-		 matrix = matriz;
+
 		}
 		
 	public int Filas() {
