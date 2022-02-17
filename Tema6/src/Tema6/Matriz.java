@@ -73,7 +73,6 @@ public class Matriz {
 	public Matriz mul( Matriz matri) {
 		Matriz vector3 = new Matriz(filas,columnas,true);
 		for(int i = 0; i<vector3.matrix.length;++i) {
-			int a=0;
 			for(int j = 0;j<vector3.matrix[i].length;++j) {
 				for(int z=0;z<columnas;++z) {
 					vector3.matrix[i][j]+=matrix[i][z]*matri.matrix[z][j];
