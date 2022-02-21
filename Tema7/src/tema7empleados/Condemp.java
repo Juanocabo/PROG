@@ -3,7 +3,31 @@ package tema7empleados;
 import java.util.Scanner;
 
 public class Condemp {
-
+	public static double Media(Empleados[] pers,int oc) {
+		double media;
+		int cont=0,edad=0;
+		if(oc==1) {
+		for(int i = 0 ; i<pers.length;++i) {
+			if(pers[i] instanceof Empleados) {
+				edad+=pers[i].edad;
+				++cont;}
+		}}
+		else if(oc==2) {for(int i = 0 ; i<pers.length;++i) {
+			if(pers[i] instanceof Administrativos) {
+				edad+=pers[i].edad;
+				++cont;}
+			}
+		}
+		else {for(int i = 0 ; i<pers.length;++i) {
+			if(pers[i] instanceof Maquinistas) {
+				edad+=pers[i].edad;
+				++cont;}
+			}
+		}
+		media=edad/cont;
+		return media;
+	}
+	
 	public static void main(String[] args) {
 		Scanner tec = new Scanner(System.in);
 		int total;
@@ -33,6 +57,7 @@ public class Condemp {
 			if(emp[i] instanceof Maquinistas)emp[i].verDatos();
 		}
 		
+		Media(emp,1);
 	}
 
 }
