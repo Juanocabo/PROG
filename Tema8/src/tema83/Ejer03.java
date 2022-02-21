@@ -10,13 +10,13 @@ public class Ejer03 {
 	public Ejer03(){
 		try {
 			pideNum();
+			divide();
 		}catch(InputMismatchException e) {
 			try{pideCadena();
+			divide();
 			}catch(NoNumCadenaException e1) {
 				System.out.println("Fallo :"+e.getMessage());
 			}
-		}finally {
-			divide();
 		}
 	}
 	public void pideNum() throws InputMismatchException{
@@ -38,8 +38,12 @@ public class Ejer03 {
 		}
 	}
 	public void divide() {
+		try {
 		cociente=dividendo/divisor;
-		System.out.println(cociente);
+		System.out.println(cociente);}
+		catch(ArithmeticException e2) {
+			System.out.println(e2.getMessage());
+		}
 	}
 	public class NoNumCadenaException extends Exception {
 		/**
