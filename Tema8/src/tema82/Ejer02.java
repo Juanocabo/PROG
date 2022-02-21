@@ -1,5 +1,6 @@
 package tema82;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class Ejer02 {
 				pideNum();
 			}catch(InputMismatchException e){
 				try{pideCadena();
-				}catch(NoNumCadenaException e1){
+				}catch(IOException e1){
 					correcto=false;
 				}
 			}
@@ -34,26 +35,16 @@ public class Ejer02 {
 		catch(InputMismatchException e) {}
 
 	}
-	public void pideCadena() throws NoNumCadenaException {
+	public void pideCadena() throws IOException {
 		cadena=tec.nextLine();
 		for(int i = 0 ; i<=cadena.length()&&cont<6;++i) {
 			if(cadena.charAt(i)<='9'&&cadena.charAt(i)>='0'&& cont<=6) {num=Integer.parseInt(String.valueOf(cadena.charAt(i)));
 			resultado+=num;
 			++cont;
 			}
-			else throw new NoNumCadenaException("la cadena contiene un caracter que no es un numero");
+			else throw new IOException("la cadena contiene un caracter invalido");
 		}--cont;
 	}
-	public class NoNumCadenaException extends Exception {
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		public NoNumCadenaException ( String error) {
-			super();}
-		
-
-		}
 	public static void main(String[] args) {
 			Ejer02 hola = new Ejer02();
 }}

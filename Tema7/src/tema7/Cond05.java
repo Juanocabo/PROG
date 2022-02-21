@@ -1,7 +1,7 @@
 package tema7;
 
 public class Cond05 extends Ejer05{
-	
+	Ejer05 hola=new Cond05();
 	public static void main(String[] args) {
 		
 	}
