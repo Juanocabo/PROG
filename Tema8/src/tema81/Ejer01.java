@@ -13,45 +13,36 @@ public class Ejer01 {
 		float altura;
 		boolean correcto=true;
 		public alumno() throws IOException {
-			
-			try {
 				do {
 					System.out.println("Dime el nombre");
 					nombre=tec.nextLine();
+					correcto=true;
 					for( int i=0; i<nombre.length()&&correcto==true;++i) {
 					;
 						if(nombre.toLowerCase().charAt(i)>='a' && nombre.toLowerCase().charAt(i)<='z')correcto=true;
 						else correcto=false;
 					}
 				}while(correcto==false);
-				//correcto=true;
-			}catch(InputMismatchException e) { 
-			throw new IOException("error datatype");}//}
-			
-			//while(correcto==false) {
+
 				try {
-					tec.nextLine();
 					do {
 						System.out.println("Dime la edad");
 						edad=tec.nextInt();
 					}while(edad<0);
-					//correcto=true;
 				}catch(InputMismatchException e) {
-				throw new IOException("error datatype");}//}
-			//correcto = false;
-			//while(correcto==false) {
+				throw new IOException("error datatype");}
+
 				try {
-					tec.nextLine();
 					do {
 						System.out.println("Dime la altura");
 						altura=tec.nextFloat();
 					}while(altura<0);
-					//correcto=true;
+
 				}catch(InputMismatchException e) {
 				throw new IOException ("error datatype");
 				}}
 
-		//}
+
 		public void verdatos() {
 			System.out.println(nombre+" "+edad+" "+altura);
 		}
