@@ -58,18 +58,17 @@ public class Ejer01 {
 	public static void main(String[] args){
 		alumno alu1;
 		alumno alu2;
-		//try {
+
 			try {
 				alu1 = new alumno();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				System.out.println(e.getMessage());
 				return;
 			}
+			
 			try {
 				alu2 = new alumno();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				System.out.println(e.getMessage());
 				return;
 			}
