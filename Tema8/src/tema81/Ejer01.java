@@ -75,11 +75,6 @@ public class Ejer01 {
 			alu1.verdatos();
 			alu2.verdatos();
 			alu1.mayor(alu2);
-		//} catch (InputMismatchException e) {
-			//System.out.println("has introduci mal alguno de los datos");
-			//e.printStackTrace();
-		//}
-
 
 	}
 
