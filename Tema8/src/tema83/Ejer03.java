@@ -17,6 +17,8 @@ public class Ejer03 {
 			divide();
 			}catch(IOException e1) {
 				System.out.println("Fallo :"+e.getMessage());
+			}catch(ArithmeticException e2) {
+				System.out.println("Divides por cero"+e2.getMessage());
 			}
 		}
 	}
