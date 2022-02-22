@@ -46,10 +46,12 @@ public class Ejer01 {
 		public void verdatos() {
 			System.out.println(nombre+" "+edad+" "+altura);
 		}
-		public void mayor(alumno alu2) {
-			if(edad>alu2.edad)System.out.println("el mayor es: "+nombre);
-			else if(edad<alu2.edad)System.out.println("el mayor es: "+alu2.nombre);
-			else System.out.println("Ambos tienen la misma edad");
+		public boolean mayor(alumno alu2) throws Exception {
+			boolean mayor;
+			if(edad>alu2.edad)mayor=true;
+			else if(edad<alu2.edad)mayor=false;
+			else throw new Exception("ambos son iguales");
+			return mayor;
 		}
 	}
 
@@ -74,7 +76,12 @@ public class Ejer01 {
 			
 			alu1.verdatos();
 			alu2.verdatos();
-			alu1.mayor(alu2);
+			try {
+			if(alu1.mayor(alu2))System.out.println(alu1.nombre+" es el mayor");
+			else System.out.println(alu2.nombre+" es el mayor");
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
 
 	}
 
