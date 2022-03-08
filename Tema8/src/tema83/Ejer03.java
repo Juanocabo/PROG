@@ -35,8 +35,8 @@ public class Ejer03 {
 		String cadena2="";
 		for(int i = 0 ; i<cadena.length();++i) {
 			if(cadena.charAt(i)<='9'&&cadena.charAt(i)>='0'&& cont<=6) {cadena2+=cadena.charAt(i);++cont;}
-			else if(cadena.charAt(i)==' '&&cont==0){dividendo=Integer.parseInt(cadena2);}
-			else if(cadena.charAt(i)==' '&&cont==1){divisor=Integer.parseInt(cadena2);}
+			else if(cadena.charAt(i)=='/'&&cont==0){dividendo=Integer.parseInt(cadena2);}
+			else if(cadena.charAt(i)=='/'&&cont==1){divisor=Integer.parseInt(cadena2);}
 			else  throw new IOException("la cadena contiene un caracter invalido");
 		}
 	}
