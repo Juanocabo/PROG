@@ -19,26 +19,22 @@ public class Examen {
 				v[i] = new Camion(ejes);
 			}
 			if(Math.random() >= 0.5)
-				v[i].pintar((int)(Math.random() * Vehiculo.colorbase + 1));
+				v[i].pintar((int)(Math.random() * Vehiculo.colorbase) + 1);
 		}
 
 		for(int i = 0; i < 1000000; i++) {
 			String salida="";
-			int ejes;
 			if(v[i] instanceof Automovil)
-				salida = "Automovil";
+				salida = "Automovil\t";
 			else if(v[i] instanceof Furgoneta)
-				salida = "Furgo";
-
+				salida = "Furgoneta\t";
 			else 
-				salida = "Camion";
-				salida += "\t"+v[i].getEjes();
+				salida = "Camion   \t";
+				salida += v[i].getEjes()+"\t";
 			if(v[i].getColor() != Vehiculo.colorbase)
-				salida += "\t"+v[i].getColor()+"\t"+v[i].precioPintura();
+				salida += v[i].getColor()+"       \t"+v[i].precioPintura()+"€";
 			System.out.println(salida);
 		}
-
-
 
 	}
 
