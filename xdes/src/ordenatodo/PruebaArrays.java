@@ -9,7 +9,6 @@ public class PruebaArrays extends ListaOrdenable {
 		super(m);
 		
 	}
-
 	public void ordenar() {
 		Arrays.sort(m);
 	}

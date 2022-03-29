@@ -7,11 +7,12 @@ public class Burbuja extends ListaOrdenable{
 		
 	}
 	public void ordenar() {
-		boolean ordenado;
-		int x;
-		for(int i=0; i<canti-1;i++){
+		int x=0;
+		int cantidad = m.length;
+		boolean ordenado=false;
+		for(int i=0; i<cantidad-1;i++){
 			ordenado=true;
-			for(int j=i; j<canti-(i+1);j++){
+			for(int j=i; j<cantidad-(i+1);j++){
 				if(m[j]>m[j+1]) { 
 					x=m[j];
 					m[j]=m[j+1];	
@@ -19,7 +20,7 @@ public class Burbuja extends ListaOrdenable{
 					ordenado=false;
 				}
 			}
-			for(int j=canti-(i+1);j>i;j--) {
+			for(int j=cantidad-(i+1);j>i;j--) {
 				if(m[j-1]>m[j]) { 
 					x=m[j];
 					m[j]=m[j-1];	
