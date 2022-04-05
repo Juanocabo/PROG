@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class Votacion {
 
 	int conDiputados;
-	Partido[] e=null;
+	ListaPartidos e=null;
 	private final int MAXSIZE = 100;
 	ListaPartidos l =new ListaPartidos();
 	int partidos = 0;
@@ -64,10 +64,10 @@ public class Votacion {
 								aux.getVotos(auxPartido)/divisor);
 		}*/
 		aux.ordenar();
-		e=new Partido[MAXSIZE];
+		e=new ListaPartidos(l.getCantidad());
 		conDiputados=0;
 		for(int i = 0; i<diputados;i++)
-			conDiputados=insertarVotos(e,aux.getNombre(i),1,conDiputados);
+			e.annadirVotos(aux.getNombre(i),1);
 
 	}
 

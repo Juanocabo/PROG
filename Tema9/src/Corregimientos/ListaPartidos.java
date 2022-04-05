@@ -37,5 +37,9 @@ public class ListaPartidos {
 	public void ordenar() {
 		Arrays.sort(l);
 	}
+	
+	public int getCantidad() {
+		return limite;
+	}
 }
 
