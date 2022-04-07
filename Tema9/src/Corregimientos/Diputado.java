@@ -19,7 +19,9 @@ public class Diputado extends Partido{
 	}
 	
 	public int compareTo(Object o) {
-		return -(this.votos-((Diputado)o).votos);
+		if (diputados != ((Diputado)o).diputados)
+			return -(diputados-((Diputado)o).diputados);
+		return -(votos-((Diputado)o).votos);
 	}
 	
 }

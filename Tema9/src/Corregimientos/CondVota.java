@@ -5,7 +5,7 @@ import java.util.Random;
 public class CondVota {
 
 	public static void main(String[] args) {
-		Random r =new Random();
+		Random r =new Random(1);
 		final int ELECTORES=724983;
 		final int partidos=20;
 		final int MAXVOTOS=500;

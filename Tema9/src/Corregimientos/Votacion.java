@@ -75,7 +75,7 @@ public class Votacion {
 	public String toString() {
 		if (e==null)
 			return "No ha sido calculado";
-		String salida="Partido\tVotos";
+		String salida="Partido\tEscaños";
 		for(int i = 0; i<e.getCantidad();i++) {
 			Partido p = e.getPartido(i);
 			salida+="\n"+p;
