@@ -13,7 +13,7 @@ public class Votacion {
 	int conDiputados;
 	Lista<Diputado> e=null;
 	//private final int MAXSIZE = 100;
-	Lista<Partido> l =new Lista<Partido>();
+	Lista<Partido> l =new Lista<>();
 	int partidos = l.getCantidad();
 	int diputados;
 
@@ -37,7 +37,7 @@ public class Votacion {
 	public void Calcular() {
 		partidos = l.getCantidad();
 		int votostotal=0;
-		Lista aux = new Lista(diputados*partidos);
+		Lista<Partido> aux = new Lista<>(diputados*partidos);
 
 		for( int i = 0; i<l.getCantidad(); i++) 
 			votostotal+=l.getPartido(i).getVotos();
