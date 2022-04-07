@@ -75,8 +75,8 @@ public class Votacion {
 		if (e==null)
 			return "No ha sido calculado";
 		String salida="Partido\tVotos";
-		for(int i = 0; i<conDiputados;i++) {
-			salida+="\n"+e[i].getNombre()+"\t"+e[i].getVotos();
+		for(int i = 0; i<e.getCantidad();i++) {
+			salida+="\n"+e.getNombre(i)+"\t"+e.getVotos(i);
 		}
 		return salida;
 	}
