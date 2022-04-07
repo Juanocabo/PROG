@@ -24,4 +24,12 @@ public class Diputado extends Partido{
 		return -(votos-((Diputado)o).votos);
 	}
 	
+	public String toString() {
+		return nombre + "\t" + diputados + "\t" + votos;
+	}
+
+	public void addVotos(int votos) {
+		if(votos>0)diputados+=votos;
+	}
+	
 }

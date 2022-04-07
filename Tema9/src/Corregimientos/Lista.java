@@ -2,18 +2,18 @@ package Corregimientos;
 
 import java.util.Arrays;
 
-public class ListaPartidos {
+public class Lista<T> {
 	private final int MAXSIZE = 100;
-	Partido[] l;
-	int limite=0;
+	T[] l;
+	int limite=100;
 
-	public ListaPartidos() {
-		l = new Partido[MAXSIZE];
+	public Lista() {
+		l = new T[MAXSIZE];
 	}
-	public ListaPartidos(int size) {
-		l = new Partido[size];
+	public Lista(int size) {
+		l = new T[size];
 	}
-
+/*
 	public void annadirVotos(String partido, int votos) {
 		for(int i = 0; i<limite;i++)
 			if(l[i].getNombre().equals(partido)) {
@@ -30,11 +30,33 @@ public class ListaPartidos {
 				return ;
 			}
 		l[limite++]= p;
+	}*/
+	
+	public void insertar (T p) {
+		l[limite++] = p;
 	}
 	
-	public Partido getPartido(int i) {
+	public T getPartido(int i) {
 		return l[i];
 	}
+/*	
+	public Partido buscar(String nombre) {
+	
+		for(int i = 0; i<limite;i++)
+			if(l[i].getNombre().equals(nombre)) 
+				return l[i];
+			return null;
+	}
+	*/
+	public T buscar(T p) {
+		
+		for(int i = 0; i<limite;i++)
+			if(l[i].getNombre().equals(p)) 
+				return l[i];
+			return null;
+	}
+	
+	/*
 	public  void insertarVotos(String partido, int votos) {
 		l[limite++] = new Partido(partido,votos);
 	}
@@ -44,7 +66,7 @@ public class ListaPartidos {
 	}
 	public String  getNombre (int posicion) {
 		return l[posicion].getNombre();
-	}
+	}*/
 	public void ordenar() {
 		Arrays.sort(l);
 	}

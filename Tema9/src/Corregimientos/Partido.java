@@ -1,8 +1,9 @@
 package Corregimientos;
 
+@SuppressWarnings("rawtypes")
 public class Partido implements Comparable{
 
-	final private String nombre;
+	final protected String nombre;
 	protected int votos;
 public Partido(String nombre) {
 	this.nombre=nombre;
@@ -24,6 +25,10 @@ public void addVotos(int votos) {
 @Override
 public String toString() {
 	return nombre + "\t" + votos;
+}
+
+public boolean equals(Object o) {
+	return nombre.equals(o);
 }
 
 public int compareTo(Object o) {

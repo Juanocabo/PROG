@@ -1,7 +1,6 @@
 
 package Corregimientos;
 
-import java.util.Arrays;
 
 /**
  * Almacena los datos de unas elecciones u determuina ellnumero 
@@ -12,9 +11,9 @@ import java.util.Arrays;
 public class Votacion {
 
 	int conDiputados;
-	ListaPartidos e=null;
-	private final int MAXSIZE = 100;
-	ListaPartidos l =new ListaPartidos();
+	Lista<Diputado> e=null;
+	//private final int MAXSIZE = 100;
+	Lista<Partido> l =new Lista<Partido>();
 	int partidos = l.getCantidad();
 	int diputados;
 
@@ -24,10 +23,13 @@ public class Votacion {
 
 
 	public void insertarVotos(String partido, int votos) {
-		Partido a= new Partido(partido,votos);
 		e=null;
-		l.annadirVotos(a);
+		Partido o = new Partido(partido,votos);
+		Partido p = l.buscar(o);
+		if (p != null)p.addVotos(votos);
+		else l.insertar(new Partido(partido,votos));
 	}
+	
 
 	/**
 	 * Determina el numero de cada partido con los datos actuales
@@ -35,18 +37,18 @@ public class Votacion {
 	public void Calcular() {
 		partidos = l.getCantidad();
 		int votostotal=0;
-		ListaPartidos aux = new ListaPartidos(diputados*partidos);
+		Lista aux = new Lista(diputados*partidos);
 
 		for( int i = 0; i<l.getCantidad(); i++) 
-			votostotal+=l.getVotos(i);
+			votostotal+=l.getPartido(i).getVotos();
 		
 		int porcentaje= (int) (votostotal / 100.0 * 5);
 		for( int i = 0; i<diputados*partidos; i++) {
 			
 			int auxPartido = i%partidos;
 			int divisor = i/partidos+1;
-			aux.insertarVotos(l.getNombre(auxPartido),l.getVotos(auxPartido)< porcentaje ? 0 : 
-				l.getVotos(auxPartido)/divisor);	
+			aux.insertar(new Partido(l.getPartido(auxPartido).getNombre(),l.getPartido(auxPartido).getVotos()< porcentaje ? 0 : 
+				l.getPartido(auxPartido).getVotos()/divisor));	
 		}
 
 		
@@ -66,9 +68,15 @@ public class Votacion {
 								aux.getVotos(auxPartido)/divisor);
 		}*/
 		aux.ordenar();
-		e=new ListaPartidos(l.getCantidad());
-		for(int i = 0; i<diputados;i++)
-			e.annadirVotos(aux.getNombre(i),1);
+		e=new Lista(l.getCantidad());
+		for(int i = 0; i<diputados;i++) {
+			Partido miAux = aux.getPartido(i);
+			Partido p=e.buscar(miAux);
+			if(p==null)
+				e.insertar(new Diputado(miAux.getNombre(),miAux.getVotos()));
+			else 
+				p.addVotos(1);
+			}
 
 	}
 
