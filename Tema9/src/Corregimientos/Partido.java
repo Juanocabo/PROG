@@ -3,7 +3,7 @@ package Corregimientos;
 public class Partido implements Comparable{
 
 	final private String nombre;
-	private int votos;
+	protected int votos;
 public Partido(String nombre) {
 	this.nombre=nombre;
 	this.votos=0;
