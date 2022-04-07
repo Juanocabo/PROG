@@ -22,6 +22,10 @@ public void addVotos(int votos) {
 	if(votos>0)this.votos+=votos;
 }
 @Override
+public String toString() {
+	return nombre + "\t" + votos;
+}
+
 public int compareTo(Object o) {
 	return -(this.votos-((Partido)o).votos);
 	/*if(this.votos < ((Partido)o).votos)

@@ -14,7 +14,6 @@ public class ListaPartidos {
 		l = new Partido[size];
 	}
 
-
 	public void annadirVotos(String partido, int votos) {
 		for(int i = 0; i<limite;i++)
 			if(l[i].getNombre().equals(partido)) {
@@ -23,7 +22,19 @@ public class ListaPartidos {
 			}
 		l[limite++]= new Partido(partido,votos);
 	}
+
+	public void annadirVotos(Partido p) {
+		for(int i = 0; i<limite;i++)
+			if(l[i].getNombre().equals(p.getNombre())) {
+				l[i].addVotos(p.getVotos());
+				return ;
+			}
+		l[limite++]= p;
+	}
 	
+	public Partido getPartido(int i) {
+		return l[i];
+	}
 	public  void insertarVotos(String partido, int votos) {
 		l[limite++] = new Partido(partido,votos);
 	}
