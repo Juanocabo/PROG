@@ -68,7 +68,7 @@ public class Votacion {
 								aux.getVotos(auxPartido)/divisor);
 		}*/
 		aux.ordenar();
-		e=new Lista(l.getCantidad());
+		e=new Lista<>(l.getCantidad());
 		for(int i = 0; i<diputados;i++) {
 			Partido miAux = aux.getPartido(i);
 			Partido p=e.buscar(miAux);
