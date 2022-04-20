@@ -10,7 +10,8 @@ package Domino;
  *
  */
 public class Ficha {
-	private char c1,c2;
+	protected char c1;
+	protected char c2;
 	private static final String VALIDOS=" 123456";
 	//comprueba que el caracter es valido para la ficha
 	private boolean valido(char x) {
@@ -34,6 +35,7 @@ public class Ficha {
 				y==0?' ':(char)('0'+y));
 		
 	}
+	
 	
 	public boolean equals( Ficha f ) {
 		return( c1==f.c1 && c2==f.c2 
