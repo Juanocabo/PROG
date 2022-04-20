@@ -7,7 +7,7 @@ public class PartidaDomino {
 	public static void main(String[] args) {
 			CajaDomino partida = new CajaDomino();
 			Scanner s = new Scanner(System.in);
-			System.out.println("Cuantos jugadores juegan?");
+		/*	System.out.println("Cuantos jugadores juegan?");
 			int num=s.nextInt();
 			int j=0;
 			int z;
@@ -17,7 +17,8 @@ public class PartidaDomino {
 				for( z=j; z<cantidad+j;++z)
 					System.out.print("--"+partida.getFicha(z)+((z==cantidad-2)?"\n":""));
 				j=cantidad;
-				}
+				}*/
+			System.out.println(partida);
 			
 
 	}
