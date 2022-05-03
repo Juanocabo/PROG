@@ -4,14 +4,25 @@ import java.util.HashMap;
 
 public class Opcionesrpssl{
 	static HashMap<Integer, String> op = new HashMap<Integer, String>();
-	static int tu,maquina;
+	static int tu=0,maquina=0;
 	public Opcionesrpssl(){
+		/*
+		op.put(1, "Piedra");
+		op.put(2, "Papel");
+		op.put(3, "Tijera");
+		op.put(4, "Spock");
+		op.put(5, "Lagarto");
+		*/
+		op.put(1, "Piedra");
+		op.put(2, "Pistola");
+		op.put(3, "Agua");
+		op.put(4, "Aire");
+		op.put(5, "Papel");
+		op.put(6, "Esponja");
+		op.put(7, "Humano");
+		op.put(8, "Tijeras");
+		op.put(9, "Fuego");
 		
-		op.put(1, "piedra");
-		op.put(2, "papel");
-		op.put(3, "tijera");
-		op.put(4, "spok");
-		op.put(5, "lagarto");
 	}
 	static public Integer resta(Integer a,int b) {
 		if(a-b<=0)return(a-b)+op.size();
@@ -19,7 +30,7 @@ public class Opcionesrpssl{
 		
 	}
 	static public Integer suma(Integer a,int b) {
-		if(a+b>5)return(a+b)-op.size();
+		if(a+b>op.size())return(a+b)-op.size();
 		return a+b;
 		
 	}
@@ -29,7 +40,7 @@ public class Opcionesrpssl{
 	public void marcaRonda(Integer a,Integer b) {
 		if(a==b)return;
 		int i = 2;
-		while(i<op.size()/2) {
+		while(i<op.size()/2*2) {
 			if(suma(a,i)==b)++tu;
 			if(resta(a,i)==b)++maquina;
 			i+=2;

@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Rpssl {
 		
 		System.out.println("Empieza el juego");
 		do {
-			System.out.println(menu);
+			System.out.println(menu());
 			a=s.nextInt();
 			if(a!=0&&a<=op.op.size())
 			jugada(a);
@@ -20,7 +21,10 @@ public class Rpssl {
 		}while(a!=0);
 	}
 	String menu() {
-		String menu;
+		String menu="";
+		for(Map.Entry<Integer,String> x:op.op.entrySet()) {
+			menu+=x.getKey()+"."+x.getValue()+"\r";
+		}
 		 
 		return menu;
 		
