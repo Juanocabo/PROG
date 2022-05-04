@@ -33,7 +33,7 @@ public class Rpssl {
 		int b = r.nextInt(5)+1;
 		String ai =op.op.get((Integer)a);
 		String ia =op.op.get((Integer)b);
-		op.marcaRonda((Integer)a,(Integer)b);
+		//op.marcaRonda((Integer)a,(Integer)b);
 
 			System.out.println(ai+"\tX\t"+ia+op.matoPierdo((Integer)a,(Integer)b));
 	}

@@ -37,21 +37,29 @@ public class Opcionesrpssl{
 	public String getMarcador() {
 		return "__________________\n|TU \t MAQUINA| \n|"+tu+"\t       "+maquina+"|\n__________________";
 	}
-	public void marcaRonda(Integer a,Integer b) {
+	/*public void marcaRonda(Integer a,Integer b) {
 		if(a==b)return;
 		int i = 2;
 		while(i<op.size()/2*2) {
-			if(suma(a,i)==b)++tu;
-			if(resta(a,i)==b)++maquina;
+			if(suma(a,i)==b) {++tu;
+			return;}
+			if(resta(a,i)==b) {++maquina;
+			return;}
 			i+=2;
 		}
-	}
+	}*/
 	
 	public String matoPierdo(Integer a,Integer b) {
 		int i = 2;
 			while(i<=(op.size()/2)*2) {
-				if(suma(a,i)==b)return" ganas";
-				if(resta(a,i)==b)return" pierdes";
+				if(suma(a,i)==b) {
+					++tu;
+					return" ganas";
+				}
+				if(resta(a,i)==b) {
+					++maquina;
+					return" pierdes";
+				}
 				i+=2;
 			}
 		return" empate";
