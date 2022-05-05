@@ -1,14 +1,15 @@
 import java.io.*;
-
+/*
+ * Lee el documento de texto primos
+ */
 public class Leeyescribe {
 
 	public static void main(String[] args) throws IOException {
 		String testo="";
 		FileInputStream a=null;
-		DataOutputStream u= null;
 		try {
 			int c;
-			File f = new File("D:/Documentos/david.txt");
+			File f = new File("src/primos.txt");
 			a = new FileInputStream(f);
 			
 			while ((c=a.read())!=-1) {
@@ -21,11 +22,7 @@ public class Leeyescribe {
 		
 		}
 		System.out.println(testo);
-		u = new DataOutputStream( new BufferedOutputStream(new FileOutputStream("D:/Documentos/david.txt")));
 		
-		u.writeUTF(testo);
-		u.flush();
-		u.close();
 	}
 
 }

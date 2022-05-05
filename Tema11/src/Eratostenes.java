@@ -1,10 +1,11 @@
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.TreeSet;
-
+/*
+ * mirar el documento de texto primos.txt
+ */
 public class Eratostenes {
 
 	public static void main(String[] args) throws IOException {
