@@ -46,13 +46,13 @@ public class Menu {
 			insertar();
 			break;
 		case 2:
-			System.out.println("Borrar");
+			borrar();
 			break;
 		case 3:
-			System.out.println("Modificar");
+			modificar();
 			break;
 		case 4:
-			System.out.println("Validar");
+			validar();
 			break;
 		}
 		return false;
@@ -90,4 +90,38 @@ public class Menu {
 			}
 		}
 	}
+	private void borrar() {
+		Borrar borra = new Borrar(fichero);
+		System.out.println("escribe el nombr edel usuario que deseas borrar:");
+		String nombre=in.next();
+		
+		if(borra.comprobarUsuario(nombre)) {
+			System.out.println("escribe la contraseña:");
+			String contraseña=in.next();
+			borra.borrar(nombre,contraseña);
+		}
+	}
+	private void modificar() {
+		Modificar modifica = new Modificar(fichero);
+		System.out.println("escribe el nombr edel usuario que deseas modificar:");
+		String nombre=in.next();
+		if(modifica.comprobarUsuario(nombre)) {
+			System.out.println("escribe la contraseña:");
+			String contraseña=in.next();
+			System.out.println("escribe la nueva contraseña:");
+			String ncontraseña=in.next();
+			modifica.modificar(nombre,contraseña,ncontraseña);
+		}
+	}
+	private void validar() {
+		Validar valida = new Validar(fichero);
+		System.out.println("escribe el nombr edel usuario que deseas modificar:");
+		String nombre=in.next();
+		if(valida.comprobarUsuario(nombre)) {
+			System.out.println("escribe la contraseña:");
+			String contraseña=in.next();
+			if(valida.validar(nombre, contraseña)==true)System.out.println("contraseña correcta");
+			else System.out.println("contraseña incorrecta");
+		
+	}}
 }

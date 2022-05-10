@@ -7,14 +7,14 @@ import java.io.FileReader;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Borrar {
+public class Modificar {
 	String tempo="passwd_temp.txt";
 	String fichero;
 	Scanner s = null;
 	Scanner re = null;
 	boolean add = true;
-	
-	public Borrar ( String archivo ) {
+	Scanner teclado = new Scanner(System.in);
+	public Modificar ( String archivo ) {
 		fichero = archivo;
 		
 		//System.out.println("Abro fichero: " + fichero);
@@ -40,7 +40,7 @@ public class Borrar {
 		}
 		return false;
 	}
-	public void borrar(String nombre,String passwd) {
+	public void modificar(String nombre,String passwd, String npasswd) {
 		String n="";
 		String p="";
 		PrintStream ps = null;
@@ -62,6 +62,10 @@ public class Borrar {
 				String salida=n+" "+p+"\r";
 				ps.print(salida);
 				}
+				else {
+					String salida=n+" "+npasswd+"\r";
+					ps.print(salida);
+				}
 			}
 			
 		} finally {
@@ -82,5 +86,4 @@ public class Borrar {
 			}
 			
 	}
-	
 }
