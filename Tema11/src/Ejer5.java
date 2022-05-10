@@ -24,6 +24,9 @@ public class Ejer5 {
 			aux=read.nextLine();
 			if(!aux.contains("//")&&!aux.contains("/**")&&!aux.contains("*")&&!aux.contains("*/"))write.println(aux);
 		}
+		tec.close();
+		write.close();
+		read.close();
 	}
 
 }

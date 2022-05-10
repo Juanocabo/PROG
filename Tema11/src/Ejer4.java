@@ -31,6 +31,7 @@ public class Ejer4 {
 		}finally {
 			write.close();
 			read.close();
+			tec.close();
 		}
 	}
 }
