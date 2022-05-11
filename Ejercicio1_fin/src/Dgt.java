@@ -1,0 +1,116 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Dgt {
+
+	ArrayList<Vehiculos> coches= new ArrayList<Vehiculos>();
+	boolean add;
+	Scanner in=null;
+	PrintStream out=null;
+	String fichero;
+	String tmp="temp.txt";
+	public Dgt(String fichero) {
+		
+		this.fichero=fichero;
+		abrirFichero();
+		
+	}
+	/**
+	 * 
+	 * @return false si no existe el fichero y true sisi despues de guardar todos los vehiculos
+	 */
+	public boolean abrirFichero() {
+		try {
+		in = new Scanner(new BufferedReader(new FileReader(fichero)));
+		}catch (FileNotFoundException e) {
+			add=false;
+		}
+		if(add) {
+			while(in.hasNext()) {
+				coches.add(new Vehiculos(in.nextLine()));
+			}
+		}
+		else System.out.println("No hay vehiculos registrados");
+		return add;
+	}
+	
+	public void añadirVehiculo(String matricula, String marca, String modelo, String propietario, String año) {
+		
+		coches.add(new Vehiculos(matricula,marca,modelo,propietario,año));
+	}
+	
+	public void añadirSancion(String matricula,String fecha, String motivo, String importe) {
+		
+		for( Vehiculos x : coches) {
+			if(x.matricula==matricula)x.multas.add(new Sancion(fecha,motivo,importe));
+		}
+	}
+	
+	public void commit() {
+		out.close();
+		in.close();
+		
+		try {
+			out = new PrintStream(new FileOutputStream(tmp,false));
+		} catch (FileNotFoundException e) {}
+		
+		for(Vehiculos x : coches) {
+			out.println(x);
+		}
+		out.close();
+		try {
+			out = new PrintStream(new FileOutputStream(fichero,false));
+			in = new Scanner(new BufferedReader(new FileReader(tmp)));
+		} catch (FileNotFoundException e) {}
+		
+		while(in.hasNext()) {
+			out.println(in.nextLine());
+		}
+	}
+	
+	public void eliminarVehiculo(String matricula) {
+		
+		for(Vehiculos x : coches) {
+			if(x.matricula==matricula && x.multas.isEmpty())coches.remove(x);
+			if(x.matricula==matricula && !x.multas.isEmpty())System.out.println(x.multas.size());
+		}
+	}
+	
+	public void consultaSanciones(String matricula) {
+		
+		for(Vehiculos x : coches) {
+			if(x.matricula==matricula && !x.multas.isEmpty()) {
+				
+				for(Sancion y : x.multas) {
+					
+					System.out.println(y.fecha+"-"+y.importe+"-"+y.motivo);
+				}
+			}
+		}
+	}
+	
+	public void quitarSanciones(String matricula) {
+		
+		for(Vehiculos x : coches) {
+			if(x.matricula==matricula && !x.multas.isEmpty()) {
+				
+				x.multas.clear();
+			}
+		}
+	}
+	
+	public void vehiculosCon(int i) {
+		
+		for(Vehiculos x : coches) {
+			if(x.multas.size()>=i)System.out.println(x);
+			
+		}
+	}
+	
+	
+}
