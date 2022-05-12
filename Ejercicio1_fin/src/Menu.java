@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -64,6 +65,7 @@ public class Menu {
 	
 	private void añadirV() {
 		
+		boolean val=true;
 		String matricula,marca,modelo,propietario,año;
 		System.out.println("matricula:");
 		matricula=tec.next();
@@ -75,7 +77,16 @@ public class Menu {
 		propietario=tec.next();
 		System.out.println("año:");
 		año=tec.next();
-		t.añadirVehiculo(matricula,marca,modelo,propietario,año);
+		do {
+		try {
+			t.añadirVehiculo(matricula,marca,modelo,propietario,año);
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			val=false;
+			System.out.println("matricula:");
+			matricula=tec.next();
+		}
+		}while(!val);
 		
 	}
 	

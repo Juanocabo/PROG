@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -33,7 +34,7 @@ public class Dgt {
 		}catch (FileNotFoundException e) {
 			add=false;
 		}
-		if(in.hasNext()) {
+		if(add) {
 			while(in.hasNextLine()) {
 				if(!coches.add(new Vehiculos(in.nextLine())))System.out.println("no se mete");
 			}
@@ -42,7 +43,7 @@ public class Dgt {
 		return add;
 	}
 	
-	public void añadirVehiculo(String matricula, String marca, String modelo, String propietario, String año) {
+	public void añadirVehiculo(String matricula, String marca, String modelo, String propietario, String año) throws IOException {
 		
 		coches.add(new Vehiculos(matricula,marca,modelo,propietario,año));
 	}
