@@ -9,10 +9,17 @@ public class Sancion {
 		this.importe=importe;
 	}
 	public Sancion(String entrada) {
-		fecha=entrada.substring(entrada.indexOf(". "),entrada.indexOf("|"));
-		entrada=entrada.substring(entrada.indexOf("|"),entrada.length());
+		fecha=entrada.substring(entrada.indexOf(".")+1,entrada.indexOf("|"));
+		entrada=entrada.substring(entrada.indexOf("|")+1,entrada.length());
 		motivo=entrada.substring(0,entrada.indexOf("|"));
-		entrada=entrada.substring(entrada.indexOf("|"),entrada.length());
-		importe=entrada.substring(0,entrada.indexOf(";"));
+		importe=entrada.substring(entrada.indexOf("|")+1,entrada.indexOf(";"));
+	}
+	
+	public String toString() {
+		
+		String salida="."+fecha+"|"+motivo+"|"+importe+";";
+		
+		return salida;
+		
 	}
 }

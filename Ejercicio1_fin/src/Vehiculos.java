@@ -31,7 +31,7 @@ public class Vehiculos{
 		String salida=matricula+":"+marca+":"+modelo+":"+propietario+":"+año+":";
 		int i=1;
 		for (Sancion x : multas) {
-			salida+=(i++)+". "+x.fecha+"|"+x.motivo+"|"+x.importe+";";
+			salida+=x;//(i++)+"."+x.fecha+"|"+x.motivo+"|"+x.importe+";";
 		}
 		return salida;
 		
@@ -45,19 +45,19 @@ public class Vehiculos{
 	public void gnirtSot(String entrada) {
 		
 		matricula=entrada.substring(0,entrada.indexOf(":"));
-		entrada=entrada.substring(entrada.indexOf(":"),entrada.length());
+		entrada=entrada.substring(entrada.indexOf(":")+1,entrada.length());
 		marca=entrada.substring(0,entrada.indexOf(":"));
-		entrada=entrada.substring(entrada.indexOf(":"),entrada.length());
+		entrada=entrada.substring(entrada.indexOf(":")+1,entrada.length());
 		modelo=entrada.substring(0,entrada.indexOf(":"));
-		entrada=entrada.substring(entrada.indexOf(":"),entrada.length());
+		entrada=entrada.substring(entrada.indexOf(":")+1,entrada.length());
 		propietario=entrada.substring(0,entrada.indexOf(":"));
-		entrada=entrada.substring(entrada.indexOf(":"),entrada.length());
+		entrada=entrada.substring(entrada.indexOf(":")+1,entrada.length());
 		año=entrada.substring(0,entrada.indexOf(":"));
 		entrada=entrada.substring(entrada.indexOf(":"),entrada.length());
-		if(entrada.indexOf(":")!=entrada.length()-1) {
-			while(entrada.indexOf(";")!=entrada.lastIndexOf(";")) {
-			multas.add(new Sancion(entrada.substring(0,entrada.indexOf(";"))));
-			entrada=entrada.substring(entrada.indexOf(";"),entrada.length());
+		if(entrada.indexOf(";")>=0) {
+			while(entrada.indexOf(";")<=entrada.lastIndexOf(";") && entrada.indexOf(";")>0) {
+			multas.add(new Sancion(entrada.substring(0,entrada.indexOf(";")+1)));
+			entrada=entrada.substring(entrada.indexOf(";")+1,entrada.length());
 			}
 		}
 	}

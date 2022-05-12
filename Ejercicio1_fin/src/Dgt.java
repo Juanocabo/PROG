@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Dgt {
 
 	ArrayList<Vehiculos> coches= new ArrayList<Vehiculos>();
-	boolean add;
+	boolean add=true;
 	Scanner in=null;
 	PrintStream out=null;
 	String fichero;
@@ -17,7 +17,10 @@ public class Dgt {
 	public Dgt(String fichero) {
 		
 		this.fichero=fichero;
-		abrirFichero();
+		if(abrirFichero())System.out.println("todo bien");
+		for(Vehiculos x : coches) {
+			System.out.println(x);
+		}
 		
 	}
 	/**
@@ -30,9 +33,9 @@ public class Dgt {
 		}catch (FileNotFoundException e) {
 			add=false;
 		}
-		if(add) {
-			while(in.hasNext()) {
-				coches.add(new Vehiculos(in.nextLine()));
+		if(in.hasNext()) {
+			while(in.hasNextLine()) {
+				if(!coches.add(new Vehiculos(in.nextLine())))System.out.println("no se mete");
 			}
 		}
 		else System.out.println("No hay vehiculos registrados");
@@ -47,13 +50,15 @@ public class Dgt {
 	public void añadirSancion(String matricula,String fecha, String motivo, String importe) {
 		
 		for( Vehiculos x : coches) {
-			if(x.matricula==matricula)x.multas.add(new Sancion(fecha,motivo,importe));
+			if(x.matricula.equals(matricula))x.multas.add(new Sancion(fecha,motivo,importe));
 		}
 	}
 	
 	public void commit() {
-		out.close();
-		in.close();
+		if(in!=null)
+			in.close();
+		if(out!=null)
+			out.close();
 		
 		try {
 			out = new PrintStream(new FileOutputStream(tmp,false));
@@ -83,22 +88,29 @@ public class Dgt {
 	
 	public void consultaSanciones(String matricula) {
 		
+		int cont=0;
 		for(Vehiculos x : coches) {
-			if(x.matricula==matricula && !x.multas.isEmpty()) {
-				
+			if(x.matricula.equals(matricula) ) {
+				++cont;
+				if(!x.multas.isEmpty()) {
+					
 				for(Sancion y : x.multas) {
 					
 					System.out.println(y.fecha+"-"+y.importe+"-"+y.motivo);
 				}
+				}
+				else System.out.println("no tiene multas");
 			}
+			
 		}
+		if(cont==0)System.out.println("no existe un vehiculo con esta matricula");
 	}
 	
 	public void quitarSanciones(String matricula) {
 		
 		for(Vehiculos x : coches) {
-			if(x.matricula==matricula && !x.multas.isEmpty()) {
-				
+			if(x.matricula.equals(matricula) && !x.multas.isEmpty()) {
+				System.out.println("eliminando sanciones");
 				x.multas.clear();
 			}
 		}
