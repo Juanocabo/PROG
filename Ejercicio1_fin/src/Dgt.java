@@ -43,7 +43,7 @@ public class Dgt {
 		return add;
 	}
 	
-	public void añadirVehiculo(String matricula, String marca, String modelo, String propietario, String año) throws IOException {
+	public void añadirVehiculo(String matricula, String marca, String modelo, String propietario, String año)  {
 		
 		coches.add(new Vehiculos(matricula,marca,modelo,propietario,año));
 	}

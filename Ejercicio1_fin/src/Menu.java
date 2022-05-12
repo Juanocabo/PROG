@@ -23,6 +23,7 @@ public class Menu {
 		do {
 			imprimir();
 			opcion=tec.nextInt();
+			tec.nextLine();
 
 		}while(opcion<1 || opcion >7);
 		if(opcion == 7)return true;
@@ -67,8 +68,16 @@ public class Menu {
 		
 		boolean val=true;
 		String matricula,marca,modelo,propietario,año;
-		System.out.println("matricula:");
-		matricula=tec.next();
+		do {
+			val=true;
+			System.out.println("matricula:");
+			matricula=tec.next();
+			if(Vehiculos.valida(matricula)==false) {
+				System.out.println("matricula invalida");
+				val=false;
+			}
+		
+		}while(!val);
 		System.out.println("marca:");
 		marca=tec.next();
 		System.out.println("modelo:");
@@ -77,16 +86,7 @@ public class Menu {
 		propietario=tec.next();
 		System.out.println("año:");
 		año=tec.next();
-		do {
-		try {
-			t.añadirVehiculo(matricula,marca,modelo,propietario,año);
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-			val=false;
-			System.out.println("matricula:");
-			matricula=tec.next();
-		}
-		}while(!val);
+		t.añadirVehiculo(matricula,marca,modelo,propietario,año);
 		
 	}
 	

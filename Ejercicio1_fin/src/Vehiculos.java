@@ -15,10 +15,10 @@ public class Vehiculos{
 
 	String matricula,marca,modelo,propietario,año;
 	ArrayList<Sancion> multas = new ArrayList<Sancion>();
-	public Vehiculos(String matricula, String marca, String modelo, String propietario, String año) throws IOException{
-		if(valida(matricula)){
+	public Vehiculos(String matricula, String marca, String modelo,
+			String propietario, String año){
+		
 		this.matricula=matricula.toUpperCase();
-		}	else throw new IOException("Matricula invalida");
 		this.marca=marca;
 		this.modelo=modelo;
 		this.propietario=propietario;
@@ -63,15 +63,15 @@ public class Vehiculos{
 			}
 		}
 	}
-	private boolean valida(String matricula) {
+	public static boolean valida(String matricula) {
 		
-		if(matricula.length()<7) {		
+		if(matricula.length()>=7) {		
 		String num="0123456789";
 		matricula=matricula.toUpperCase();
 		for(int i=0;i<matricula.length();++i) {
-			if(i>4 && (matricula.charAt(i)<'A'|| matricula.charAt(i)>'Z'||
-					matricula.charAt(i)=='Ñ'|| matricula.charAt(i)=='Q'))return false;
-			if(i<=4 && num.indexOf(matricula.charAt(i))==-1)return false;
+			if(i>3 && matricula.charAt(i)<'A'|| matricula.charAt(i)>'Z'||
+					matricula.charAt(i)=='Ñ'|| matricula.charAt(i)=='Q')return false;
+			if(i<=3 && matricula.charAt(i)<'0'|| matricula.charAt(i)>'9')return false;
 		}
 		return true;
 		}else return false;
