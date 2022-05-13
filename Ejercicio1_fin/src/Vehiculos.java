@@ -1,4 +1,4 @@
-import java.io.IOException;
+
 import java.util.ArrayList;
 
 /**
@@ -31,9 +31,8 @@ public class Vehiculos{
 	
 	public String toString() {
 		String salida=matricula+":"+marca+":"+modelo+":"+propietario+":"+año+":";
-		int i=1;
 		for (Sancion x : multas) {
-			salida+=x;//(i++)+"."+x.fecha+"|"+x.motivo+"|"+x.importe+";";
+			salida+=x;
 		}
 		return salida;
 		
@@ -66,7 +65,6 @@ public class Vehiculos{
 	public static boolean valida(String matricula) {
 		
 		if(matricula.length()>=7) {		
-		String num="0123456789";
 		matricula=matricula.toUpperCase();
 		for(int i=0;i<matricula.length();++i) {
 			if(i>3 && matricula.charAt(i)<'A'|| matricula.charAt(i)>'Z'||
