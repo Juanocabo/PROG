@@ -62,21 +62,13 @@ public class Dgt {
 			out.close();
 		
 		try {
-			out = new PrintStream(new FileOutputStream(tmp,false));
+			out = new PrintStream(new FileOutputStream(fichero,false));
 		} catch (FileNotFoundException e) {}
 		
 		for(Vehiculos x : coches) {
 			out.println(x);
 		}
 		out.close();
-		try {
-			out = new PrintStream(new FileOutputStream(fichero,false));
-			in = new Scanner(new BufferedReader(new FileReader(tmp)));
-		} catch (FileNotFoundException e) {}
-		
-		while(in.hasNext()) {
-			out.println(in.nextLine());
-		}
 	}
 	
 	public void eliminarVehiculo(String matricula) {

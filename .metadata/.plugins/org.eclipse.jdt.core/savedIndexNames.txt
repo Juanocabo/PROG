@@ -1,7 +1,6 @@
 INDEX VERSION 1.131+D:\Documentos\Aqui\0\FotosVerano83\.metadata\.plugins\org.eclipse.jdt.core
 521059614.index
 1639956899.index
-3574506867.index
 185762108.index
 75931715.index
 3741931446.index
