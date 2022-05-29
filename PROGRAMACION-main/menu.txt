@@ -1,0 +1,1 @@
+gazpacho;6.0;tomate_1;pepino_1;pimiento_2;tortilla;4.0;patata_5;cebolla_3;
